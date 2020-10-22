@@ -1,0 +1,23 @@
+
+body {
+    background-image: url('/Pictures/kpakpakpa 2.jpg');
+    background-size: cover;
+}
+
+
+
+
+.home {
+color:white;
+text-align: center;
+}
+
+body>.homecontainer {
+    background-image: url('/Pictures/kpakpakpa 2.jpg');
+    background-size: cover;
+}
+
+.pix {
+    background-size: cover;
+}
+

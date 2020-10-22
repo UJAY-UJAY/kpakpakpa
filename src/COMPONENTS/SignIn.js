@@ -1,39 +1,29 @@
 import React, { useState } from 'react';
+import styles from './signin.module.css'
+import { useHistory } from 'react-router-dom';
+import '../index.css';
+import SignupForm from './SignupForm'
+
+
 
 function signIn() {
+    const history = useHistory();
 
-    const [email, setEmail] = useState('EugeneAppertey@gmail.com');
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [loggedIn, setloggedIn] = useState('false');
 
-    function handleInput(event) {
-        console.log(event.target.value)
-    
-    }
-
-    function handlePasswordInput(event) {
-        setPassword(event.target.value)
-    }
-
     function handlelogin (event) {
         event.preventDefault();
-        if (email==='eugeneappertey@gmail.com' && password ==='piloloo') {
+        if (email==='a' && password ==='s') {
             setloggedIn (true)
+            history.push('/dashboard')
         }
+        return;
     }
     return (
 
         <div>
-
-            {/* <form>
-                <label for="fname">First name:</label><br></br>
-                <input type="text" id="fname" name="fname"></input><br></br>
-                <label for="lname">Last name:</label><br></br>
-                <input type="text" id="lname" name="lname"></input><br></br>
-                <input type="submit" value="Submit"></input> <input></input>
-            </form> */}
-
-
             <div>
                 {
                     loggedIn===true
@@ -44,11 +34,37 @@ function signIn() {
                <form>
 
                    <label> Email </label>
-                   <input type= "text" value={email} onChange={handleInput} />
+                   <input 
+                        type= "email" 
+                        value={email} 
+                        onChange={e => setEmail(e.target.value)} />
 
                    <label> Password </label>
-                   <input type='password'/>
+                   <input 
+                        type='password'
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                    />
+
+                 <div class="btn-group">
+                    <div class = "center">
+                      <button onClick={() => handlelogin() }>Submit</button>
+                    </div>
+                 </div>
                </form>
+            </div>
+
+            <br></br>
+
+            
+                
+            <div class='container'> 
+              
+                
+            </div>
+            <div>
+                <SignupForm/>
+
             </div>
                 
         </div>

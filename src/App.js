@@ -1,39 +1,26 @@
 import React from 'react';
-
-import NavBar from './COMPONENTS/NavBar'
+import NavBar from './components/navbar/NavBar'
 import Home from './pages/Home'
-import SignIn from './COMPONENTS/SignIn'
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Success from './pages/SuccessStories'
+import SignIn from './components/SignIn'
+import Dashboard from './pages/Dashboard'
+import { Route, Switch} from 'react-router-dom'
 
 
-
-
-function newApp() {
+function App() {
 
   return (
-    
     <>
-
      < NavBar/>
-     <Router>
+
        <Switch>
-         <Route path='/' exact>< Home/></Route>
-         <Route path='/signin'>< SignIn/></Route>
-         
-       </Switch>
-     </Router>
-
-  
-    
-
-     
-    
-     
-
-
+         <Route exact path='/'>< Home/></Route>
+         <Route path='/signin'>< SignIn/></Route>  
+         <Route path='/success'><Success/></Route>
+         <Route path='/dashboard'><Dashboard/></Route>
+      </Switch>
     </>
-
   );
 }
 
-export default newApp;
+export default App;
