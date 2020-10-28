@@ -5,3 +5,31 @@
  width: 300px;
  margin: 100px auto;
 } */
+
+.allforms {
+    display: flex;
+    /* justify-content: space-around; */
+    flex-direction: row;
+    padding: 25px;
+    
+}
+
+.signin > form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px; 
+}
+
+.login {
+    width: 300px;
+    font-size: 1.5em;
+    margin-top: 200px;
+    margin-left: 100px;
+}
+
+.signup {
+    margin-right: 300px;
+    width: 550px;
+    
+}

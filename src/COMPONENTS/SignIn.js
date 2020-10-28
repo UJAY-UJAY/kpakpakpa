@@ -23,8 +23,8 @@ function signIn() {
     }
     return (
 
-        <div>
-            <div>
+        <div className={styles.allforms}>
+            <div className={styles.signin}>
                 {
                     loggedIn===true
                     ?
@@ -32,24 +32,36 @@ function signIn() {
                     :null
                 }
                <form>
-
-                   <label> Email </label>
+                   <div className={styles.login}>
+                
                    <input 
                         type= "email" 
                         value={email} 
                         onChange={e => setEmail(e.target.value)} />
 
-                   <label> Password </label>
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                  
+
+                   
                    <input 
                         type='password'
                         value={password}
                         onChange={e => setPassword(e.target.value)}
                     />
 
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                  
+                
+
                  <div class="btn-group">
                     <div class = "center">
                       <button onClick={() => handlelogin() }>Submit</button>
                     </div>
+                 </div>
                  </div>
                </form>
             </div>
@@ -62,7 +74,7 @@ function signIn() {
               
                 
             </div>
-            <div>
+            <div className={styles.signup} >
                 <SignupForm/>
 
             </div>

@@ -3,6 +3,7 @@ import HomeContent from "./home/HomeContent"
 import { NavLink } from 'react-router-dom';
 
 
+
 function Home () {
     return(
         <div>
@@ -15,7 +16,7 @@ function Home () {
               {/* <img src={'/Pictures/000.png'}/> */}
 
               <NavLink to ='/signin'>
-               CLICK
+               <center><h4>CLICK</h4></center>
               </NavLink>
 
            </div>
