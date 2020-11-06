@@ -37,23 +37,24 @@ function signIn() {
                    <input 
                         type= "email" 
                         value={email} 
-                        onChange={e => setEmail(e.target.value)} />
+                        onChange={e => setEmail(e.target.value)} id="email" name="email" placeholder="email.."
+               />
 
                         <br></br>
                         <br></br>
-                        <br></br>
+            
                   
 
                    
                    <input 
                         type='password'
                         value={password}
-                        onChange={e => setPassword(e.target.value)}
+                        onChange={e => setPassword(e.target.value)} id="password" name="password" placeholder="password.."
                     />
 
                         <br></br>
                         <br></br>
-                        <br></br>
+                        
                   
                 
 
@@ -78,6 +79,10 @@ function signIn() {
                 <SignupForm/>
 
             </div>
+
+            <div className={styles.logo4}>
+              <img className={styles.resize5} src={'/Pictures/logo4.png'}/>
+           </div>
                 
         </div>
        

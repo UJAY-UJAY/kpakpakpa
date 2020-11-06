@@ -1,7 +1,8 @@
 import React, {useState} from 'react';
+import axios from 'axios'
 
 import { useHistory } from 'react-router-dom'
-import styles from './signupform.module.css';
+// import styles from './signupform.module.css';
 
 
 
@@ -16,54 +17,58 @@ function Form () {
     const [skillSet, setSkillSet] = useState('');
     const [username, setUsername] = useState('');
 
-    function handlelogin (event) {
-        event.preventDefault();
-        if (email==='a' && password ==='s') {
-            setloggedIn (true)
-            history.push('/dashboard')
-        }
-    }
-                        
+    
 
 
 
+const handleSubmit = (e) => {
+    e.preventDefault()
+    axios.post('http://localhost:7198/api/user/new', {username,password,email,skillSet})
+      .then(res => {
+          if (res.data) {
+              history.push('/dashboard')
+          } else {
+              alert('username or password invalid')
+          }
+      })
 
-
+}
 
         return(
     <div className="container">
     <form>
     <div className="row">
         <div className="col-25">
-        <label for="username">UserName</label>
+        {/* <label for="username">UserName</label> */}
         </div>
         <div className="col-75">
-        <input type="text" onChange={e => setUsername(e.target.value)} id="username" name="username" placeholder= "username"/>
+        <input type="text" value={username} onChange={e => setUsername(e.target.value)} id="username" name="username" placeholder= "username"/>
         </div>
     </div>
-
+     
+    
     <div className="row">
         <div className="col-25">
-        <label for="password">Password</label>
+        {/* <label for="password">Password</label> */}
         </div>
         <div className="col-75">
-        <input type="text" onChange={e => setPassword(e.target.value)} id="password" name="password" placeholder= "password"/>
+        <input type="text" value={password} onChange={e => setPassword(e.target.value)} id="password" name="password" placeholder= "password"/>
         
         </div>
     </div>
 
     <div className="row">
         <div className="col-25">
-        <label for="email">email</label>
+        {/* <label for="email">email</label> */}
         </div>
         <div className="col-75">
-        <input type="text" onChange={e => setEmail(e.target.value)} id="email" name="email" placeholder="email.."/>
+        <input type="text" value={email} onChange={e => setEmail(e.target.value)} id="email" name="email" placeholder="email.."/>
         
         </div>
     </div>
     <div className="row">
         <div className="col-25">
-        <label for="category">Category</label>
+        {/* <label for="category">Category</label> */}
         </div>
         <div className="col-75">
         <select id="jobcategory" name="jobcategory">
@@ -73,16 +78,19 @@ function Form () {
         </select>
         </div>
     </div>
+
+    <br></br>
+
     <div className="row">
         <div className="col-25">
-        <label for="subject">Profile</label>
+        {/* <label for="subject">Profile</label> */}
         </div>
         <div className="col-75">
-        <textarea id="subject" name="subject" placeholder="Skillset.." style={{height:"200px"}}></textarea>
+        <textarea id="subject" value={skillSet} onChange={e => setSkillSet(e.target.value)} name="subject" placeholder="Skillset.." style={{height:"200px"}}></textarea>
         </div>
     </div>
     <div className="row">
-    <button onClick={ handlelogin }>Submit</button>
+    <button onClick={e => handleSubmit(e) }>Submit</button>
     </div>
     </form>
     </div>

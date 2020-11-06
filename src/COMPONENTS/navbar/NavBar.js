@@ -17,8 +17,14 @@ function NavBar () {
         <NavLink to ='/success'>
           Success Stories
         </NavLink>
+
+          <div className={styles.logo2}>
+              <img className={styles.resize4} src={'/Pictures/logo4.png'}/>
+          </div>
         
       </div>
+
+          
     </div>
  );
 }

@@ -8,18 +8,16 @@ function HomeContent () {
     
         <div className={styles.home}>
 
-            <div>
-                <h2>
-                    YOUR KIND OF JOB IS JUST A CLICK AWAY
-                </h2>
-            </div>
+           
 
               <br></br>
               <br></br>
               <br></br>
             
-            <div>
-                <h3 className='home'>The Man Who Works More Than He Is Paid,<br></br> <span>Will Soon Be Paid More Than He Works</span> </h3>
+            <div className={styles.quote}>
+                <h3 className='home'>"The Man Who Works More Than He Is Paid,<br></br> <span>Will Soon Be Paid More Than He Works" 
+                    <br></br> <h6>Napoleon Hill</h6></span> </h3>
+
             
                 
             </div>
@@ -29,6 +27,18 @@ function HomeContent () {
             <br></br>
             <br></br>
             <br></br>
+
+            <div  className={styles.hussle}>
+                <h4>
+                    FIND A SIDE-HUSSLE AND MAKE MORE MONEY
+                </h4>
+            </div>
+
+            <div>
+                <h5>
+                    YOUR KIND OF JOB IS JUST A CLICK AWAY
+                </h5>
+            </div>
             
 
             <div>

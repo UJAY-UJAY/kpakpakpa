@@ -100,3 +100,24 @@ overflow: hidden;
 
 
   }
+
+  .logo2 {
+    position: absolute;
+    top: -74px;
+    margin-left: 1100px;
+    float: 100px;
+    height: auto;
+    max-width: -200%;
+    background-position: center;
+
+}
+
+.resize4 {
+    width: 500px;
+    height: auto;
+}
+
+.resize4 {
+    width: 300px;
+    height: auto;
+}
